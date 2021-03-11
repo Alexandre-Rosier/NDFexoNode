@@ -1,25 +1,48 @@
-import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import React, {useState, useEffect} from 'react';
+import "./List.css"
 
 export default function List() {
-    const [infos, setInfos] = useState([]);
-        
+    const [companies, setCompanies] = useState([]);
+    const [search, setSearch] = useState('');
+    const [filtered, setFiltered] = useState(false)
+
+
     useEffect(() => {
-        axios
-            .get('https://apis.wilders.dev/wild-games/games/')
-            .then((res) => res.data)
-            .then((infos) => {
-                console.log(infos) ||
-                setInfos(infos);
-            })    
+        
+        const fetchData = async () => {
+            const result = await axios("http://localhost:3001/companies")
+            setCompanies(result.data)
+        }
+        fetchData() 
     },[])
-    console.log(infos[0].name)
+
+    const handleFilter = () => {
+        setFiltered(!filtered)
+    }
+
     return(
         <div className="content">
-            {/* {infos.map((info, index) => (
-                <p>{info.name}</p>
-            ))} */}
-            {/* <h1>{infos[0].name}</h1> */}
+            <div className="research">
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="recherche entreprise"
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}>
+                </input>
+                <button onClick={handleFilter}>valider</button>
+                {companies
+                    .filter((filteredCompany) => !filtered || filteredCompany.name === search)
+                    .map((company) => (
+                    <>
+                        <p className="company-name"><strong>Entreprise :</strong>{company.name}</p>
+                        <img className="img-brand" src={company.picture} alt={company.name}/>
+                        <p className="director"><strong>Directeur :</strong>{company.director}</p>
+                        <p className="location"><strong>Localisation :</strong>{company.location}</p>
+                    </>
+                    ))}
+            </div>
         </div>
     )
-    }
+}
