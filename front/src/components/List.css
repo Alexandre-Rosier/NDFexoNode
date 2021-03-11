@@ -1,0 +1,26 @@
+.img-brand{
+    width: 150px;
+    object-fit: cover;
+    max-height: 100px;
+}
+.content {
+    display: flex;
+    justify-content: center;
+}
+.company {
+    width: 500px;
+}
+.director {
+    margin-bottom: 5px;
+    font-weight: lighter;
+    
+}
+.location {
+    margin-top: 5px;
+    margin-bottom: 80px;
+    font-weight: lighter;
+}
+.name-company {
+    font-size: 20px;
+    font-weight: bold;
+}
