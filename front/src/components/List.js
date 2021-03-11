@@ -12,27 +12,26 @@ export default function List() {
         
         const fetchData = async () => {
             const result = await axios("http://localhost:3001/companies")
-            console.log(result.data)
             setCompanies(result.data)
         }
         fetchData() 
     },[])
 
     const handleFilter = () => {
-        setFiltered(!filtered)
+        setFiltered(!filtered)     
     }
-
     return(
         <div className="content">
             <div className="research">
+
                 <input
                     type="text"
                     name="search"
                     placeholder="recherche entreprise"
                     value={search}
-                    onChange={(event) => setSearch(event.target.value)}>
+                    onChange={(event) => setSearch((event.target.value).charAt(0).toUpperCase()+(event.target.value).substring(1))}>
                 </input>
-                <button onClick={handleFilter}>valider</button>
+                <button onClick={handleFilter}>{filtered ? "retour" : "valider"}</button>
                 {companies
                     .filter((filteredCompany) => !filtered || filteredCompany.name === search)
                     .map((company) => (
