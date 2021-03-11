@@ -10,7 +10,7 @@ Setup projet =>
   - ouvrir second terminal
   - rentrer dans NDFexoNode/front
   - npm install dans terminal puis npm start
-  - 
+  
 
 Description challenge =>
 
