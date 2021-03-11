@@ -12,6 +12,7 @@ export default function List() {
         
         const fetchData = async () => {
             const result = await axios("http://localhost:3001/companies")
+            console.log(result.data)
             setCompanies(result.data)
         }
         fetchData() 
