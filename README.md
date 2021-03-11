@@ -16,5 +16,5 @@ Description challenge =>
 
   Etant donné que vous faites de la prospection pour vos clients, je suis parti pour l'exercice sur : 
   
-  - Création d'une API entreprise et quelques routes coté back avec node
+  - Création d'une API entreprises et quelques routes coté back avec node
   - Appel à l'API pour récupérer les données des entreprises + ajout d'un filtre de recherche coté front avec react.
