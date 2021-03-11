@@ -1,7 +1,7 @@
 const companies = [
     {
         id: 0,
-        name: "NewDealFrance",
+        name: "New deal france",
         director: "Alban Dumont",
         location: "Nantes",
         picture:"images/image-NDF.jpg"
@@ -15,7 +15,7 @@ const companies = [
     },
       {
         id: 2,
-        name: "WildCodeSchool",
+        name: "Wildcodeschool",
         director: "Anna Stépanoff",
         location: "Europe",
         picture:"images/image-wildcodeschool.png"
