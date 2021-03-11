@@ -1,4 +1,4 @@
-# Exercice recrutement NewdealFrance
+# Exercice recrutement NewDealFrance
 
 Création micro-application avec node.js avec un appel à API.
 
